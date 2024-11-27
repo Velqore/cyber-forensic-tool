@@ -1,3 +1,4 @@
+const {NUMVERIFY,HUNTER } = require('./Api.js') 
 async function traceData({ name, email, phone }) {
   let results = {};
   
@@ -19,13 +20,13 @@ async function traceData({ name, email, phone }) {
 
 async function validateEmail(email) {
   // Example API for email validation
-  return fetch(`https://api.hunter.io/v2/email-verifier?email=${email}&api_key=12a2bb366a4ed466a04f9a5adc86c0dcf425c738`)
+  return fetch(`https://api.hunter.io/v2/email-verifier?email=${email}&api_key=${HUNTER}`)
     .then((response) => response.json());
 }
 
 async function validatePhoneNumber(phone) {
   // Example API for phone validation
-  return fetch(`https://api.numverify.com/?access_key=e1ed7a2be9b9d72b6adb1f952e856235&number=${phone}`)
+  return fetch(`https://api.numverify.com/?access_key=${NUMVERIFY}&number=${phone}`)
     .then((response) => response.json());
 }
 
