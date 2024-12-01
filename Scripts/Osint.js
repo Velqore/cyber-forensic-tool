@@ -20,13 +20,13 @@ async function traceData({ name, email, phone }) {
 
 async function validateEmail(email) {
   // Example API for email validation
-  return fetch(`https://api.hunter.io/v2/email-verifier?email=${email}&api_key=${HUNTER}`)
+  return fetch(`${HUNTER}`)
     .then((response) => response.json());
 }
 
 async function validatePhoneNumber(phone) {
   // Example API for phone validation
-  return fetch(`https://api.numverify.com/?access_key=${NUMVERIFY}&number=${phone}`)
+  return fetch(`${NUMVERIFY}`)
     .then((response) => response.json());
 }
 
