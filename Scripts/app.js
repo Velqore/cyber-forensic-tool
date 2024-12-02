@@ -19,7 +19,7 @@ document.getElementById('search-form').addEventListener('submit', async(event) =
 });
 
 async function fetchTraceData(name, email, phone) {
-   const response = await fetch('scripts/osint.js', {
+   const response = await fetch('scripts/Api.js', {
      method: 'POST',
      headers: { 'Content-Type' : 'application/json'},
      body: JSON.stringfy({name, email, phone }),
