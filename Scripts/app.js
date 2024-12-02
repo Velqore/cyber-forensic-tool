@@ -1,3 +1,4 @@
+const {tracedata, validatePhoneNumber, validateEmail, searchSocialMedia } = require('./Api.js')
 document.getElementById('search-form').addEventListener('submit', async(event) => {
   event.preventDefault();
   const name = document.getElementById('name').value;
@@ -19,7 +20,7 @@ document.getElementById('search-form').addEventListener('submit', async(event) =
 });
 
 async function fetchTraceData(name, email, phone) {
-   const response = await fetch('scripts/Api.js', {
+   const response = await fetch('./Api.js', {
      method: 'POST',
      headers: { 'Content-Type' : 'application/json'},
      body: JSON.stringfy({name, email, phone }),
